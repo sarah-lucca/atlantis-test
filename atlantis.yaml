@@ -10,6 +10,4 @@ workflows:
         - run: rm -rf .terraform
         - init:
             extra_args: [-backend-config=config/personal.conf]
-        - plan:
-            steps:
-              - run: terraform plan -input=false 
+        - run: terraform plan -input=false
