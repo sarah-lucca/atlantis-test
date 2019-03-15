@@ -1,0 +1,14 @@
+version: 2
+projects:
+  - name: test
+    dir: .
+    workflow: test
+workflows:
+  test:
+    plan:
+      steps:
+        - run: rm -rf .terraform
+        - init:
+            extra_args: [-backend-config=config/personal.conf]
+#        - plan:
+#            extra_args: [-var-file=staging.tfvars]
