@@ -10,4 +10,7 @@ workflows:
         - run: rm -rf .terraform
         - init:
             extra_args: [-backend-config=config/personal.conf]
-        - run: terraform plan -input=false
+        - run: terraform plan -input=false -out $PLANFILE
+    apply:
+      steps:
+        - run: terraform apply $PLANFILE
