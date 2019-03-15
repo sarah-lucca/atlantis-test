@@ -10,5 +10,6 @@ workflows:
         - run: rm -rf .terraform
         - init:
             extra_args: [-backend-config=config/personal.conf]
-#        - plan:
-#            extra_args: [-var-file=staging.tfvars]
+        - plan:
+            steps:
+              - run: terraform plan -input=false 
