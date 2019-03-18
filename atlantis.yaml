@@ -1,6 +1,6 @@
 version: 2
 projects:
-  - name: personal
+  - name: personally
     dir: .
     workflow: personal-workflow
     autoplan:
