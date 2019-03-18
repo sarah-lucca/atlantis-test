@@ -1,0 +1,16 @@
+version: 2
+projects:
+  - name: test
+    dir: .
+    workflow: test
+workflows:
+  test:
+    plan:
+      steps:
+        - run: rm -rf .terraform
+        - init:
+            extra_args: [-backend-config=config/personal.conf]
+        - run: terraform plan -var-file=config/personal.tfvars -out $PLANFILE
+    apply:
+      steps:
+        - run: terraform apply -var-file=config/personal.tfvars $PLANFILE
