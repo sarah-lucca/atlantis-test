@@ -15,4 +15,4 @@ workflows:
         - run: terraform plan -var-file=config/personal.tfvars -out $PLANFILE
     apply:
       steps:
-        - run: terraform apply -var-file=config/personal.tfvars $PLANFILE
+        - run: terraform apply $PLANFILE
