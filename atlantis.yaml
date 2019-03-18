@@ -1,10 +1,12 @@
 version: 2
 projects:
-  - name: test
+  - name: personal
     dir: .
-    workflow: test
+    workflow: personal-workflow
+    autoplan:
+      enabled: false
 workflows:
-  test:
+  personal-workflow:
     plan:
       steps:
         - run: rm -rf .terraform
@@ -13,4 +15,4 @@ workflows:
         - run: terraform plan -var-file=config/personal.tfvars -out $PLANFILE
     apply:
       steps:
-        - run: terraform apply -var-file=config/personal.tfvars $PLANFILE
+        - run: terraform apply $PLANFILE
