@@ -4,7 +4,7 @@ projects:
     dir: .
     workflow: personal-workflow
     autoplan:
-      when_modified: ["*/*.conf", "*/*.tf*"]
+      when_modified: ["config/*.conf", "config/*.tf*" "*/*.tf*"]
 workflows:
   personal-workflow:
     plan:
