@@ -1,10 +1,12 @@
 version: 2
 projects:
-  - name: test
+  - name: personal
     dir: .
-    workflow: test
+    workflow: personal-workflow
+    autoplan:
+      when_modified: ["*.conf", "*.tf*"]
 workflows:
-  test:
+  personal-workflow:
     plan:
       steps:
         - run: rm -rf .terraform
