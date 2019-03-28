@@ -1,6 +1,6 @@
 atlantis-url: "https://localhost:4141"
 gh-user: "sarah97"
-gh-token: "0bf73e764a76992fc6aa58321180444c75ab9450"
-gh-webhook-secret: "zB2n6TU3EwHz62WM2TWd3rf"
+gh-token: "040ca8ae946299b625515c8eee1454f33f6c32f0"
+gh-webhook-secret: "sMK597uW53dU8oKNVF9"
 repo-whitelist: "github.com/sarah97/atlantis-test"
 allow-repo-config: true
