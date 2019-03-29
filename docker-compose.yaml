@@ -1,0 +1,4 @@
+atlantis-test:
+  image: slucca/atlantis-test:latest
+  ports:
+    - "4141:4141"
