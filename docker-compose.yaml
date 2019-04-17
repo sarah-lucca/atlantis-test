@@ -1,4 +1,23 @@
-atlantis-test:
-  image: slucca/atlantis-test:latest
-  ports:
-    - "4141:4141"
+version: '0'
+services:
+  atlantis-test:
+    container_name: atlantis_server
+    image: slucca/atlantis-test:latest
+    ports:
+      - "4141:4141"
+    environment:
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION=us-east-1
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs:/usr/local/etc/openssl/certs
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    links:
+      - atlantis-test
+
